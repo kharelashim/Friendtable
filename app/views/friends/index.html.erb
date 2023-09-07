@@ -1,0 +1,38 @@
+
+<p style="color: green"><%= notice %></p>
+
+<h1><a href="#" class="text-primary">Friend List </h1>
+<table class= "table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Sex</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friends| %>
+      <tr>
+        <td><%= friends.first_name %></td>
+        <td><%= friends.last_name %></td>
+        <td><%= friends.email %></td>
+        <td><%= friends.phone%></td>
+        <td><%= friends.gender %></td>
+        <td>
+          <%= link_to "Show", friends %>
+          <%= link_to "Edit", edit_friend_path(friends) %>
+          <%= link_to "Delete", friends, method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<%= link_to "New friend", new_friend_path, class:"btn btn-secondary"%>
