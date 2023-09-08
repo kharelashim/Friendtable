@@ -8,8 +8,7 @@
   <thead class="thead-dark">
 
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th>Sex</th>
@@ -21,8 +20,9 @@
     <% @friends.each do |friends| %>
     <% if friends.user == current_user %>
       <tr>
-        <td><%= friends.first_name %></td>
-        <td><%= friends.last_name %></td>
+        <td><%= friends.first_name %>
+            <%= friends.last_name %>
+        </td>
         <td><%= friends.email %></td>
         <td><%= friends.phone%></td>
         <td><%= friends.gender %></td>
