@@ -20,8 +20,10 @@
     <% @friends.each do |friends| %>
     <% if friends.user == current_user %>
       <tr>
-        <td><%= friends.first_name %>
-            <%= friends.last_name %>
+        <td>
+        <%=link_to friends.first_name + ' ' +  friends.last_name , friends%>
+    
+     
         </td>
         <td><%= friends.email %></td>
         <td><%= friends.phone%></td>
