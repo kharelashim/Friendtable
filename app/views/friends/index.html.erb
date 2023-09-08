@@ -11,23 +11,27 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Sex</th>
+      <th>User-Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @friends.each do |friends| %>
+    <% if friends.user == current_user %>
       <tr>
         <td><%= friends.first_name %></td>
         <td><%= friends.last_name %></td>
         <td><%= friends.email %></td>
         <td><%= friends.phone%></td>
         <td><%= friends.gender %></td>
+         <td><%= friends.user_id %></td>
         <td>
           <%= link_to "Show", friends %>
           <%= link_to "Edit", edit_friend_path(friends) %>
           <%= link_to "Delete", friends, method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
