@@ -1,4 +1,6 @@
 
+
+<% if user_signed_in?%> 
 <p style="color: green">
 
 <h1><a href="#" class="text-primary">Friend List </h1>
@@ -36,7 +38,15 @@
   </tbody>
 </table>
 
-
-
-
 <%= link_to "New friend", new_friend_path, class:"btn btn-secondary"%>
+
+
+<% else %>
+
+
+<h1>Please login</h1>
+
+<%end%>
+
+
+
